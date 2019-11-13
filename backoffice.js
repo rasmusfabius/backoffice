@@ -1,21 +1,31 @@
-handleSubmit = async () => {
-  event.preventDefault(); // preventing the default browser event handling
-  // gathering the data form, field to field
-  const myEvent = {
-    //_id: "",
+saveEvent = async product => {
+  const url = "https://striveschool.herokuapp.com/api/product";
+  const username = "user27";
+  const password = "ZGDWyFCA8umbgpvZ";
+  let token = btoa(username + ":" + password);
+
+  return await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(product),
+    headers: new Headers({
+      Authorization: "Basic " + token,
+      "Content-Type": "application/json"
+    })
+  });
+  return response;
+};
+
+createProduct = async () => {
+  event.preventDefault();
+  const newProduct = {
     name: document.querySelector("#name").value,
     description: document.querySelector("#description").value,
     brand: document.querySelector("#brand").value,
     imageUrl: document.querySelector("#url").value,
     price: document.querySelector("#price").value
-    //userId: "",
-    //createdAt: "",
-    //updatedAt: "",
-    //__v: ""
   };
-  console.log("myEvent", myEvent);
 
-  const response = await saveEvent(myEvent);
+  const response = await saveEvent(newProduct);
 
   if (response.ok) {
     alert("the event was saved successfully");

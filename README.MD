@@ -1,8 +1,11 @@
-You are building the new Amazon.
-This time you are also responsible for the back office.
+# You are building the new Amazon.
+
+This time you are also responsible for the back office.  
 THIS is you CRUD endpoint https://strive-school-testing-apis.herokuapp.com/api/product/
-  
-The product model is
+
+##### The product model is
+
+```
 {
 "\_id": "5d318e1a8541744830bef139", //SERVER GENERATED
 "name": "app test 1", //REQUIRED
@@ -15,11 +18,17 @@ The product model is
 "updatedAt": "2019-07-19T09:32:10.535Z", //SERVER GENERATED
 "\_\_v": 0 //SERVER GENERATED
 }
-EVERY REST API CALL SHOULD BE AUTHENTICATED. You should have received a couple of username and password to use them with basic authentication.
+```
+
+### EVERY REST API CALL SHOULD BE AUTHENTICATED.
+
+You should have received a couple of username and password to use them with basic authentication.  
 To use Basic Auth, add to your fetch an header like:
-Authorization: Basic ###########
+
+Authorization: Basic ###########  
 Where ######### is the base64 version of username:password
-Today you have to implement:
+
+### Today you have to implement:
 
 - A backoffice page, where you can insert the product by specifying the parameters
 - A front page, where the user can see the available products
