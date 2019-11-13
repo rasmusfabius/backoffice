@@ -1,5 +1,5 @@
 window.onload = async () => {
-  const events = await getProducts();
+  const events = await getEvents();
   console.log("events", events);
 
   const currentEventsDiv = document.querySelector("#currentProduct");

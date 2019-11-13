@@ -24,3 +24,13 @@ saveEvent = async event => {
   });
   return response;
 };
+
+getEvents = async () => {
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      Authorization: "Basic " + btoa(username + ":" + password)
+    }
+  }); //This is getting the response from the API fetching the event, here without headers
+  return await response.json(); // this is transforming the response in a json
+};
